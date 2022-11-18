@@ -78,6 +78,9 @@ namespace CarsRent.Controllers
         public async Task<ActionResult<List<Car>>> AddCar(Car car)
         {
             _context.Cars.Add(car);
+
+            _context.SaveChanges();
+
             return Ok(_context.Cars);
         }
     } 
