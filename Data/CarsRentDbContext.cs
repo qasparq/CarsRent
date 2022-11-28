@@ -3,9 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarsRent.Data
 {
-    public class DataContext : DbContext
+    public class CarsRentDbContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("server=localhost\\sqlexpress01;Database=CarRentDb;Trusted_Connection=true");
+        }
+
         public DbSet<Car> Cars { get; set; }
         public enum CarTypE
         {

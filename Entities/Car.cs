@@ -1,5 +1,5 @@
 ﻿using static CarsRent.Controllers.CalculatorController;
-using static CarsRent.Data.DataContext;
+using static CarsRent.Data.CarRentDb;
 
 namespace CarsRent.Entities
 {

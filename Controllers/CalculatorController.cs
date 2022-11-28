@@ -9,8 +9,8 @@ namespace CarsRent.Controllers
     [ApiController]
     public class CalculatorController : ControllerBase
     {
-        private readonly DataContext _context;
-        public CalculatorController(DataContext context)
+        private readonly CarRentDb _context;
+        public CalculatorController(CarRentDb context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace CarsRent.Controllers
             var today = DateTime.Now.Year;
             var car = await _context.Cars.FindAsync(id);
             var placeholder = "";
-            if (today - Data.YearDrivingLicense < 3 && car.CarType == DataContext.CarTypE.Premium)
+            if (today - Data.YearDrivingLicense < 3 && car.CarType == CarRentDb.CarTypE.Premium)
             {
                  return BadRequest("Nie możesz wypożyczyć tego samochodu");
             }
