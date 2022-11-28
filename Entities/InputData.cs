@@ -4,7 +4,7 @@
     {
         public int Distance { get; set; }
         public int YearDrivingLicense { get; set; }
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
+        public DateTime StartRent { get; set; }
+        public DateTime EndRent { get; set; }
     }
 }
