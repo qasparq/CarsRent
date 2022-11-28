@@ -43,8 +43,8 @@ namespace CarsRent.Repository
         }
         public RentalPlace GetRentalPlace(int carId)
         {
-            int carPlaceId = context.Cars.Where(car => car.Id == carId).FirstOrDefault().RentalPlaceId;
-            return context.RentalPlaces.Where(place => place.Id == carPlaceId).FirstOrDefault();
+            int carPlaceId = context.Cars.Where(x => x.Id == carId).FirstOrDefault().RentalPlaceId;
+            return context.RentalPlaces.Where(x => x.Id == carPlaceId).FirstOrDefault();
         }
     }
 }
