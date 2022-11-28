@@ -58,5 +58,5 @@ C:\Users\Kud\source\repos\CarsRent\obj\Debug\net6.0\refint\CarsRent.dll
 C:\Users\Kud\source\repos\CarsRent\obj\Debug\net6.0\CarsRent.pdb
 C:\Users\Kud\source\repos\CarsRent\obj\Debug\net6.0\CarsRent.genruntimeconfig.cache
 C:\Users\Kud\source\repos\CarsRent\obj\Debug\net6.0\ref\CarsRent.dll
-C:\Users\Kud\source\repos\CarsRent\bin\Debug\net6.0\Data\DataContext.cs
 C:\Users\Kud\source\repos\CarsRent\bin\Debug\net6.0\Entities\Car.cs
+C:\Users\Kud\source\repos\CarsRent\bin\Debug\net6.0\Data\CarsRentDbContext.cs

@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarsRent.Controllers
 {
-    [Route("CarRent")]
+    [Route("api[controller]")]
     [ApiController]
     public class CalculatorController : ControllerBase
     {
-        private readonly CarRentDb _context;
-        public CalculatorController(CarRentDb context)
+        private readonly CarsRentDbContext _context;
+        public CalculatorController(CarsRentDbContext context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace CarsRent.Controllers
             var today = DateTime.Now.Year;
             var car = await _context.Cars.FindAsync(id);
             var placeholder = "";
-            if (today - Data.YearDrivingLicense < 3 && car.CarType == CarRentDb.CarTypE.Premium)
+            if (today - Data.YearDrivingLicense < 3 && car.CarType == CarsRentDbContext.CarTypE.Premium)
             {
                  return BadRequest("Nie możesz wypożyczyć tego samochodu");
             }
@@ -38,10 +38,10 @@ namespace CarsRent.Controllers
             var IloscDni = Data.End.Subtract(Data.Start).Days; // mm/dd/yyyy
             placeholder += "Samochod wypożyczony na: " + IloscDni + " dni. \r\n";
 
-            var BasePrice = car.BasePrice;
-            placeholder += "Cena podstawowa samochodu: " + BasePrice + "\r\n";
+            //var BasePrice = Rental.BasePrice;
+            //placeholder += "Cena podstawowa samochodu: " + BasePrice + "\r\n";
 
-            var daysCost = IloscDni * BasePrice;
+            var daysCost = IloscDni /** BasePrice*/;
             placeholder += "Koszt wypozyczenia - same dni "+ daysCost + "\r\n";
 
             float carTypeCost = daysCost * ((float)car.CarType)/10;

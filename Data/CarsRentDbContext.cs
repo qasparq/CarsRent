@@ -5,12 +5,14 @@ namespace CarsRent.Data
 {
     public class CarsRentDbContext : DbContext
     {
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<RentalPlace> RentalPlaces { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=localhost\\sqlexpress01;Database=CarRentDb;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer("server=localhost\\sqlexpress01;Database=CarRent;Trusted_Connection=true");
         }
 
-        public DbSet<Car> Cars { get; set; }
         public enum CarTypE
         {
             Basic = 10, Standard = 13, Medium = 16, Premium = 20
@@ -25,8 +27,7 @@ namespace CarsRent.Data
                     Name = "Audi",
                     Combustion = 9.0f,
                     CarAvaible = 3,
-                    Localization = "Rzeszów",
-                    BasePrice = 90,
+                    RentalPlaceId = 1,
                     CarType = CarTypE.Standard,
                 },
                 new Car
@@ -35,8 +36,7 @@ namespace CarsRent.Data
                     Name = "BMW",
                     Combustion = 12.0f,
                     CarAvaible = 9,
-                    Localization = "Warszawa",
-                    BasePrice = 100,
+                    RentalPlaceId = 3,
                     CarType = CarTypE.Premium,
                 },
                 new Car
@@ -45,8 +45,7 @@ namespace CarsRent.Data
                     Name = "Chevrolet",
                     Combustion = 5.0f,
                     CarAvaible = 1,
-                    Localization = "Tarnów",
-                    BasePrice = 250,
+                    RentalPlaceId = 2,
                     CarType = CarTypE.Basic,
                 },
                 new Car
@@ -55,11 +54,30 @@ namespace CarsRent.Data
                     Name = "Polonez",
                     Combustion = 21.0f,
                     CarAvaible = 1,
-                    Localization = "Kraków",
-                    BasePrice = 10,
+                    RentalPlaceId = 1,
                     CarType = CarTypE.Medium,
                 }
              ) ;
+            modelBuilder.Entity<RentalPlace>().HasData(
+               new RentalPlace
+               {
+                   Id = 1,
+                   City = "Krakow",
+                   BasePrice = 70
+               },
+               new RentalPlace
+               {
+                   Id = 2,
+                   City = "Rzeszow",
+                   BasePrice = 120
+               },
+               new RentalPlace
+               {
+                   Id = 3,
+                   City = "Warszawa",
+                   BasePrice = 100
+               }
+               );
         }
     }
 }

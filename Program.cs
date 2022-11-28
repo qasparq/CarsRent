@@ -10,10 +10,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<CarRentDb>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("ConnString"))
-    );
+//builder.Services.AddDbContext<CarsRentDbContext>(options =>
+//    options.UseSqlServer(
+//        builder.Configuration.GetConnectionString("ConnString"))
+//    );
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
