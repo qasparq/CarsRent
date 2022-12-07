@@ -57,6 +57,21 @@ namespace CarsRent.Controllers
 
         }
 
+        [HttpPost("addReservation")]
+        public ActionResult AddReservation([FromQuery] Reservation reservation)
+        {
+            var car = unitOfWork.CarRepository.GetById(reservation.Id);
+            var newReservation = new Reservation
+            {
+                Id = 0,
+                Car = car,
+                Email = reservation.Email
+
+            };
+            unitOfWork.ReservationRepository.Insert(newReservation);
+            return Ok(newReservation);
+        }
+
         //[HttpGet("{id}")]
         //public async Task<ActionResult<List<Car>>> getCarRent(int id, [FromQuery] InputData Data)
         //{

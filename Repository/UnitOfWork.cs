@@ -7,7 +7,8 @@ namespace CarsRent.Repository
         private CarsRentDbContext context;
         private CarRepository carRepository;
         private RentalPlaceRepository rentalPlaceRepository;
-
+        private ReservationRepository reservationRepository;
+        private EmailRepository emailRepository;
         public UnitOfWork(CarsRentDbContext _context)
         {
             context = _context;
@@ -34,6 +35,30 @@ namespace CarsRent.Repository
                     rentalPlaceRepository = new RentalPlaceRepository();
                 }
                 return rentalPlaceRepository;
+            }
+        }        
+        
+        public ReservationRepository ReservationRepository
+        {
+            get
+            {
+                if (reservationRepository == null)
+                {
+                    reservationRepository = new ReservationRepository();
+                }
+                return reservationRepository;
+            }
+        }
+
+        public EmailRepository EmailRepository
+        {
+            get
+            {
+                if (emailRepository == null)
+                {
+                    emailRepository = new EmailRepository();
+                }
+                return emailRepository;
             }
         }
 
