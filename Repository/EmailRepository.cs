@@ -10,7 +10,7 @@ namespace CarsRent.Repository
         {
             var smtpClient = new SmtpClient
             {
-                Credentials = new NetworkCredential("kkacper909@gmail.com", "fovpjyiadybsvxmi"),
+                Credentials = new NetworkCredential("-", "fovpjyiadybsvxmi"),
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false
@@ -18,7 +18,7 @@ namespace CarsRent.Repository
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("kkacper909@gmail.com"),
+                From = new MailAddress("-.com"),
                 Subject = subject,
                 Body = $"Testowy email"
             };
