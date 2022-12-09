@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarsRent.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(CarsRentDbContext))]
     [Migration("20221117124946_CreateInitial")]
     partial class CreateInitial
     {
