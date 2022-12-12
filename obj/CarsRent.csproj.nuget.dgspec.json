@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kud\\source\\repos\\CarsRent\\CarsRent.csproj": {}
+    "E:\\Kacper\\source\\CarsRent\\CarsRent.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kud\\source\\repos\\CarsRent\\CarsRent.csproj": {
+    "E:\\Kacper\\source\\CarsRent\\CarsRent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kud\\source\\repos\\CarsRent\\CarsRent.csproj",
+        "projectUniqueName": "E:\\Kacper\\source\\CarsRent\\CarsRent.csproj",
         "projectName": "CarsRent",
-        "projectPath": "C:\\Users\\Kud\\source\\repos\\CarsRent\\CarsRent.csproj",
+        "projectPath": "E:\\Kacper\\source\\CarsRent\\CarsRent.csproj",
         "packagesPath": "C:\\Users\\Kud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kud\\source\\repos\\CarsRent\\obj\\",
+        "outputPath": "E:\\Kacper\\source\\CarsRent\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
